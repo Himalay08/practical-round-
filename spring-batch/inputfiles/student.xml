@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<students>
+		<student>
+				<id>1</id>
+				<first_name>John</first_name>
+				<lastName>Smith</lastName>
+				<email>john@gmail.com</email>
+		</student>
+		
+		<student>
+				<id>2</id>
+				<first_name>Himalay</first_name>
+				<lastName>Goyani</lastName>
+				<email>himalay@gmail.com</email>
+		</student>
+		
+		<student>
+				<id>1</id>
+				<first_name>Nikunj</first_name>
+				<lastName>Goyani</lastName>
+				<email>nikunj@gmail.com</email>
+		</student>
+</students>
