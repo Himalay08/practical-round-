@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.batch.modal.StudentCsv;
 import com.batch.modal.StudentResponse;
 
 @Service
@@ -30,5 +31,11 @@ public class StudentService {
 			return list.remove(0);
 		}
 		return null;
+	}
+	
+	public StudentResponse  restCallToCreateStudent(StudentCsv studentCsv) {
+		RestTemplate restTemplate = new RestTemplate();
+		return restTemplate.postForObject("http://localhost:8082/students/createStudent",studentCsv ,StudentResponse.class);
+	
 	}
 }

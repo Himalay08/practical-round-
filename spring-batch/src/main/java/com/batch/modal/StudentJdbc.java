@@ -1,12 +1,15 @@
 package com.batch.modal;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+@XmlRootElement(name="student")
 public class StudentJdbc {
 
     private Long id;
 	
-    @JsonProperty("first_name")
+//    @JsonProperty("first_name")
 	private String firstName;
 	
 	private String lastName;
@@ -21,6 +24,7 @@ public class StudentJdbc {
 		this.id = id;
 	}
 
+	@XmlElement(name="first_name")
 	public String getFirstName() {
 		return firstName;
 	}

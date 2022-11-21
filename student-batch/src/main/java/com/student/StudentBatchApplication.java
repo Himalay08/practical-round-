@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +34,12 @@ public class StudentBatchApplication {
 		list.add(new StudentResponse(9L, "Krishana", "Koladiya", "krishna@gmail.com"));
 		list.add(new StudentResponse(10L, "Krishana", "Koladiya", "krishna@gmail.com"));
 		return list;
+	}
+	
+	@PostMapping("/createStudent")
+	public StudentResponse addStudent(@RequestBody StudentRequest s) {
+		System.out.println("Student id: "+s.getId());
+		return new StudentResponse(s.getId(),s.getFirstName(),s.getLastName(),s.getEmail());
 	}
 
 }
